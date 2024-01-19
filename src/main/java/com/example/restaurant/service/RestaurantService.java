@@ -1,5 +1,6 @@
-package com.example.restaurant;
+package com.example.restaurant.service;
 
+import com.example.restaurant.repo.RestaurantRepository;
 import com.example.restaurant.dto.RestaurantDto;
 import com.example.restaurant.entity.Restaurant;
 import lombok.RequiredArgsConstructor;
@@ -19,6 +20,11 @@ public class RestaurantService {
     private final RestaurantRepository repository;
 
     public RestaurantDto create(RestaurantDto dto) {
+        // Open < Close = ERROR
+        if (dto.getCloseHour() > dto.getOpenHour())
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
+        // HttpStatus.Bad_Request = Syntax ERROR
+
         Restaurant restaurant = new Restaurant(
                 dto.getName(),
                 dto.getCategory(),

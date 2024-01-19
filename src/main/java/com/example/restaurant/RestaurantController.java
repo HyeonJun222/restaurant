@@ -1,6 +1,7 @@
 package com.example.restaurant;
 
 import com.example.restaurant.dto.RestaurantDto;
+import com.example.restaurant.service.RestaurantService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;

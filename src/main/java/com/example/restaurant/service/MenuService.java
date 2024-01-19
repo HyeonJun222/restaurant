@@ -1,5 +1,7 @@
-package com.example.restaurant;
+package com.example.restaurant.service;
 
+import com.example.restaurant.repo.MenuRepository;
+import com.example.restaurant.repo.RestaurantRepository;
 import com.example.restaurant.dto.MenuDto;
 import com.example.restaurant.entity.Menu;
 import com.example.restaurant.entity.Restaurant;
