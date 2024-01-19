@@ -6,7 +6,13 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+/*
+    POST    /restaurant -> 새로운 레스토랑 데이터 (CREATE)
+    GET     /restaurant -> 모든 레스토랑 데이터 (READ ALL)
+    GET     /restaurant/{id} -> id 를 가진 레스토랑 데이터 (READ)
+    PUT     /restaurant/{id} -> id 의 위치에 전달될 레스토랑 데이터 (UPDATE)
+    DELETE  /restaurant/{id} -> id 의 위치에 삭제할 레스토랑 데이터 (DELETE)
+ */
 @Slf4j
 @RestController
 @RequestMapping("/restaurant")
@@ -19,12 +25,12 @@ public class RestaurantController {
             @RequestBody
             RestaurantDto dto
     ) {
-        throw new RuntimeException("not implemented");
+        return service.create(dto);
     }
 
     @GetMapping
     public List<RestaurantDto> readAll() {
-        throw new RuntimeException("not implemented");
+        return service.readAll();
     }
 
     @GetMapping("/{id}")
@@ -32,7 +38,7 @@ public class RestaurantController {
             @PathVariable("id")
             Long id
     ) {
-        throw new RuntimeException("not implemented");
+        return service.read(id);
     }
 
     @PutMapping("/{id}")
@@ -42,7 +48,7 @@ public class RestaurantController {
             @RequestBody
             RestaurantDto dto
     ) {
-        throw new RuntimeException("not implemented");
+        return service.update(id, dto);
     }
 
     @DeleteMapping("/{id}")
@@ -50,6 +56,6 @@ public class RestaurantController {
             @PathVariable("id")
             Long id
     ) {
-        throw new RuntimeException("not implemented");
+        service.delete(id);
     }
 }
