@@ -8,7 +8,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -26,7 +25,7 @@ public class RestaurantService {
                 dto.getOpenHour(),
                 dto.getCloseHour()
         );
-        return RestaurantDto.fromEntity(repository.save(new Restaurant()));
+        return RestaurantDto.fromEntity(repository.save(restaurant));
     }
 
     public List<RestaurantDto> readAll() {

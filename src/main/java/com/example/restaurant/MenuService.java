@@ -1,7 +1,6 @@
 package com.example.restaurant;
 
 import com.example.restaurant.dto.MenuDto;
-import com.example.restaurant.dto.RestaurantDto;
 import com.example.restaurant.entity.Menu;
 import com.example.restaurant.entity.Restaurant;
 import lombok.RequiredArgsConstructor;

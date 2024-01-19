@@ -29,7 +29,7 @@ public class MenuController {
             @PathVariable("restId")
             Long restId
     ) {
-        return readAll(restId);
+        return service.readAll(restId);
     }
 
     @GetMapping("/{menuId}")
